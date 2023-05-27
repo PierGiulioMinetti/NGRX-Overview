@@ -13,7 +13,7 @@ import { todosReducer } from './store/todos.reducer';
   imports: [
     CommonModule,
     TodosRoutingModule,
-    StoreModule.forFeature('todos', todosReducer),
+    // StoreModule.forFeature('todos', todosReducer),
   ]
 })
 export class TodosModule { }

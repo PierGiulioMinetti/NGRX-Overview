@@ -9,6 +9,11 @@ export const initialState: CustomerState = {
             lastName: "Brando",
             age: 80,
         },
+        {
+            firstName: "Nicholas",
+            lastName: "Cage",
+            age: 62,
+        },
         
     ]
 }

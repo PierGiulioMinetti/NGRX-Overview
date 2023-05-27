@@ -14,7 +14,7 @@ import { customerReducer } from './store/customers.reducers';
   imports: [
     CommonModule,
     CustomersRoutingModule,
-    StoreModule.forFeature('customers', customerReducer),
+    // StoreModule.forFeature('customers', customerReducer),
   ]
 })
 export class CustomersModule { }
