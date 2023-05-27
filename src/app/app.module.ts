@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { todosReducer } from './todos/store/todos.reducer';
 import { customerReducer } from './customers/store/customers.reducers';
+import { AppState, appReducer } from './appState.store';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,12 @@ import { customerReducer } from './customers/store/customers.reducers';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(
-      {
-      todos: todosReducer,
-      customers:customerReducer
-    }),
+    // StoreModule.forRoot<AppState>(
+    //   {
+    //   todos: todosReducer,
+    //   customers:customerReducer
+    // }),
+    StoreModule.forRoot({app: appReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
