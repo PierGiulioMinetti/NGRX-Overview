@@ -1,1 +1,7 @@
-<p>customers works!</p>
+<ng-container *ngIf="customers$ | async as attori">
+    <ul>
+        <li *ngFor="let attore of attori ">
+            {{attore.firstName}} {{attore.lastName}} {{attore.age}}
+        </li>
+    </ul>
+</ng-container>
