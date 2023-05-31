@@ -1,0 +1,23 @@
+{
+  "customers": [
+    {
+      "firstName": "Al",
+      "lastName": "Pacino",
+      "age": 83
+    },
+    {
+      "firstName": "Robert",
+      "lastName": "De Niro",
+      "age": 79
+    }
+
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "title": "lorem ipsum todo",
+      "completed": false
+    }
+  ]
+
+}
