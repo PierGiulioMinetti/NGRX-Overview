@@ -6,6 +6,8 @@ import { Customer } from './store/customers.model';
 import { Observable } from 'rxjs';
 import { addCustomer } from './store/customers.action';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { GenericService } from '../services/generic.service';
+import { UrlEnum } from '../url.enum';
 
 @Component({
   selector: 'app-customers',
@@ -16,18 +18,12 @@ export class CustomersComponent {
   customers$!: Observable<Customer[]>;
   customerForm!:FormGroup;
 
-  dummyCustomer : Customer = {
-    firstName: 'Mario',
-    lastName: 'Lopez',
-    age: 47
-  };
+  
   constructor(
-    private store: Store<AppState>) {
-    this.customerForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      age: new FormControl('', [Validators.required, Validators.min(18)]),
-    })
+    private store: Store<AppState>,
+    private generiService: GenericService
+    ) {
+      this.initForm();
   }
 
   ngOnInit() {
@@ -40,6 +36,14 @@ export class CustomersComponent {
     // this.customers = this.store.pipe(select(selectCustomerList));
     this.customers$ = this.store.select(selectCustomerList);
 
+  }
+
+  initForm(){
+    this.customerForm = new FormGroup({
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      age: new FormControl('', [Validators.required, Validators.min(18)]),
+    })
   }
 
   addCustomer (customer:Customer){
@@ -56,4 +60,7 @@ export class CustomersComponent {
       alert('form INVALID');
     }
   }
+
 }
+
+

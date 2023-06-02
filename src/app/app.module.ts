@@ -8,6 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppState, appReducer } from './appState.store';
 import { todosReducer } from './todos/store/todos.reducer';
 import { customerReducer } from './customers/store/customers.reducers';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { customerReducer } from './customers/store/customers.reducers';
       customers:customerReducer
     }),
     // StoreModule.forRoot({app: appReducer}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

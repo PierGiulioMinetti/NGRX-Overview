@@ -13,12 +13,20 @@ export const initialState: CustomerState = {
             firstName: "Nicholas",
             lastName: "Cage",
             age: 62,
-        },
-        
-    ]
+        }
+    ],
+    loading: false,
+    error: null,
+    status: 'pending'
 }
 
 export const customerReducer = createReducer(
     initialState,
     on(CustomerActions.addCustomer, (state, {customer}) => ({...state, customers:[...state.customers, customer]})),
-);
+    on(CustomerActions.loadCustomer, (state => ({...state, status:'loading'})),
+    // on(CustomerActions.loadCustomerSuccess, (state, {customer}) => ({
+    //     ...state, 
+    //     customers:[...state.customers, customer],
+    //     error: null
+    // })),
+));

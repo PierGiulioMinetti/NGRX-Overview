@@ -6,4 +6,7 @@ export interface Customer{
 
 export interface CustomerState {
     customers: Customer[];
+    loading?: boolean;
+    error?: null | string;
+    status?: 'pending' |'loading' | 'completed' | 'failed';
 }

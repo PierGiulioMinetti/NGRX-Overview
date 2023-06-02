@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CustomersRoutingModule } from './customers-routing.module';
 import { CustomersComponent } from './customers.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CustomersRoutingModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    HttpClientModule  
     // StoreModule.forFeature('customers', customerReducer),
   ]
 })
