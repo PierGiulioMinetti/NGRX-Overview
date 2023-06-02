@@ -36,6 +36,7 @@ export class CustomersComponent {
     // this.customers = this.store.pipe(select(selectCustomerList));
     this.customers$ = this.store.select(selectCustomerList);
 
+    
   }
 
   initForm(){
