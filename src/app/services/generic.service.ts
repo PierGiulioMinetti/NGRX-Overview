@@ -13,7 +13,7 @@ export class GenericService {
   ) { }
 
 
-  getData<T>(url:string): Observable<T>{
-    return this.http.get<T>(url);
+  getData<T>(url:string): Observable<T[]>{
+    return this.http.get<T[]>(url);
   }
 }
